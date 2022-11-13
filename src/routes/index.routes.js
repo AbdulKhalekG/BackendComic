@@ -23,7 +23,7 @@ router.get('/search-username/:username',usuario.searchuser) //
 
 //Rutas para los comentarios
 router.post('/create-comentario', comentario.create) //
-router.put('/edit-post',comentario.edit) //
+router.put('/edit-comentario',comentario.edit) //
 
 
 //busqueda de comentario por id
