@@ -59,13 +59,21 @@ const createcomentario=async (req,res)=> {
     console.log(response);
 }
 
+const editcomentario=async(req,res)=>{
+
+    const{id_comentario, username, descripcion, title} = req.body
+    const response = await pool.query('UPDATE comentario SET username=$1, descripcion=$2, title=$3, WHERE id_comentario=$4', [username, descripcion, title, id_comentario])
+    console.log(response)
+}
+
 
 module.exports = {
     createuser,
     modifyuser,
     searchuserid,
     searchusername,
-    createcomentario
+    createcomentario,
+    editcomentario
 
 
 }
