@@ -95,14 +95,22 @@ const createcomic=async (req,res)=> {
 
 const editcomic=async(req,res)=>{
 
-    const{id_comic, title, descripcion, capitulos, contenido, categoria, fecha} = req.body
-    const response = await pool.query('UPDATE comic SET title=$1, descripcion=$2, capitulos=$3, contenido=$4, categoria=$5, fecha=$6 WHERE id_comic=$7', [id_comic, title, descripcion, capitulos, contenido, categoria, fecha])
+    const{id_comic, title, descripcion, capitulos, contenido, categoria, fecha, id_capitulos} = req.body
+    const response = await pool.query('UPDATE comic SET title=$1, descripcion=$2, capitulos=$3, contenido=$4, categoria=$5, fecha=$6, WHERE id_comic=$7, WHERE id_capitulos=$8', [id_comic, title, descripcion, capitulos, contenido, categoria, fecha, id_capitulos])
     console.log(response)
 }
 
 const deletecomic=async(req,res)=>{
     const id_comic =req.params.id_comic
     const response = await pool.query('DELETE * FROM comic WHERE id_comic=$1', [id_comic])
+    console.log(response)
+    res.json(response.rows);
+
+}
+
+const deletecomicc=async(req,res)=>{
+    const id_capitulos =req.params.id_capitulos
+    const response = await pool.query('DELETE * FROM comic WHERE id_capitulos=$1', [id_capitulos])
     console.log(response)
     res.json(response.rows);
 
@@ -121,6 +129,7 @@ module.exports = {
     deletecomentario,
     createcomic,
     editcomic,
-    deletecomic
+    deletecomic,
+    deletecomicc
 
 }
