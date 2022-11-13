@@ -38,7 +38,8 @@ router.delete('/delete-comentario/:id_comentario', comentario.deletecomentario)
 
 router.post('/create-comic', comic.createc)
 router.put('/edit-comic', comic.editc)
-
+router.delete('/delete-comic/:id_comic', comic.deletecomic)
+router.delete('/delete-capitulo/:id_capitulo', comic.deletecomicc)
 
 
 
