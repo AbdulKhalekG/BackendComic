@@ -100,6 +100,13 @@ const editcomic=async(req,res)=>{
     console.log(response)
 }
 
+const deletecomic=async(req,res)=>{
+    const id_comic =req.params.id_comic
+    const response = await pool.query('DELETE * FROM comic WHERE id_comic=$1', [id_comic])
+    console.log(response)
+    res.json(response.rows);
+
+}
 
 
 module.exports = {
@@ -113,7 +120,7 @@ module.exports = {
     searchusernamecomentario,
     deletecomentario,
     createcomic,
-    editcomic
-
+    editcomic,
+    deletecomic
 
 }
