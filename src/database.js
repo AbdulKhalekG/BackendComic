@@ -53,6 +53,11 @@ const searchuserid=async(req,res)=>{
     res.json(response.rows)
 }
 
+const createcomentario=async (req,res)=> {
+    const{username, descripcion, title} = req.body
+    const response = await pool.query('INSERT INTO comentario(username, descripcion, title) VALUES($1,$2,$3)',[username,descripcion,title])
+    console.log(response);
+}
 
 
 module.exports = {
@@ -60,6 +65,7 @@ module.exports = {
     modifyuser,
     searchuserid,
     searchusername,
+    createcomentario
 
 
 }
