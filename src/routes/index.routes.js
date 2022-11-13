@@ -3,6 +3,7 @@ const router = express.Router()
 const usuario = require('../controllers/usuario')
 const passport=require('passport')
 const { passportAuth } = require('../middleware')
+const comentario = require('../controllers/comentario')
 
 
 
@@ -19,7 +20,16 @@ router.get('/search-user/:id_usuario',usuario.searchiduser) //
 router.get('/search-username/:username',usuario.searchuser) //
 
 
+//Rutas para los comentarios
+router.post('/create-comentario', comentario.create) //
+router.put('/edit-post',comentario.edit) //
 
+
+//busqueda de comentario por id
+router.get('/search-comentario/:id_comentario',comentario.searchid)
+
+//busqueda de comentario por username
+router.get('/search-usernamecomentario/:username', comentario.searchusernamecomentario)
 
 
 
