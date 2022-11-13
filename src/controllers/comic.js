@@ -50,3 +50,6 @@ comic.searchusernamecomicc=(req,res)=> {
     }
 
 }
+
+
+module.exports = comic
