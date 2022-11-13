@@ -79,6 +79,15 @@ const searchusernamecomentario=async(req,res)=>{
 
 }
 
+const deletecomentario=async(req,res)=>{
+    const id_comentario =req.params.id_comentario
+    const response = await pool.query('DELETE * FROM comentario WHERE id_comentario=$1', [id_comentario])
+    console.log(response)
+    res.json(response.rows);
+
+}
+
+
 
 module.exports = {
     createuser,
@@ -88,7 +97,8 @@ module.exports = {
     createcomentario,
     editcomentario,
     searchidcomentario,
-    searchusernamecomentario
+    searchusernamecomentario,
+    deletecomentario
 
 
 }

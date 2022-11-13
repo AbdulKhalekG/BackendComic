@@ -3,6 +3,7 @@ const createcomentario=require('../database')
 const editcomentario=require('../database')
 const searchidcomentario=require('../database')
 const searchusernamecomentario=require('../database')
+const deletecomentario=require('../database')
 const comentario={}
 
 
@@ -50,6 +51,14 @@ comentario.searchusernamecomentario=(req,res)=> {
         console.log(e)
     }
 
+}
+
+comentario.deletecomentario=(req,res)=>{
+    try{
+        deletecomentario.deletecomentario(req,res)
+    }catch(e){
+        console.log(e)
+    }
 }
 
 
