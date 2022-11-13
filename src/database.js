@@ -87,6 +87,12 @@ const deletecomentario=async(req,res)=>{
 
 }
 
+const createcomic=async (req,res)=> {
+    const{title, descripcion, capitulos, contenido, categoria, fecha} = req.body
+    const response = await pool.query('INSERT INTO comic(title, descripcion, capitulos, contenido, categoria, fecha) VALUES($1,$2,$3,$4,$5,$6)',[title, descripcion, capitulos, contenido, categoria, fecha])
+    console.log(response);
+}
+
 
 
 module.exports = {
@@ -98,7 +104,8 @@ module.exports = {
     editcomentario,
     searchidcomentario,
     searchusernamecomentario,
-    deletecomentario
+    deletecomentario,
+    createcomic
 
 
 }

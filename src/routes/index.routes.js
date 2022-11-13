@@ -31,6 +31,8 @@ router.get('/search-comentario/:id_comentario',comentario.searchid)
 //busqueda de comentario por username
 router.get('/search-usernamecomentario/:username', comentario.searchusernamecomentario)
 
+router.delete('/delete-comentario/:id_comentario', comentario.deletecomentario)
+
 
 
 
