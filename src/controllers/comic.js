@@ -2,6 +2,8 @@ const createcomic=require('../database')
 const editcomic=require('../database')
 const searchidcomic=require('../database')
 const searchusernamecomic=require('../database')
+const deletecomic=require('../database')
+const deletecapitulo=require('../database')
 const comic={}
 
 
@@ -50,6 +52,35 @@ comic.searchusernamecomicc=(req,res)=> {
     }
 
 }
+
+comic.deletecomic=(req,res)=>{
+    try{
+        deletecomic.deletecomic(req,res)
+    }catch(e){
+        console.log(e)
+    }
+}
+
+
+comic.deletecomicc=(req,res)=>{
+    try{
+        deletecapitulo.deletecapitulo(req,res)
+    }catch(e){
+        console.log(e)
+    }
+}
+
+
+comic.createcapitulo=(req,res)=>{
+    try{
+        createcapitulo.createcapitulo(req,res)
+    }catch(e){
+        console.log(e)
+    }
+}
+
+
+
 
 
 module.exports = comic

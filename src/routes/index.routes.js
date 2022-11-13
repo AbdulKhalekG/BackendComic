@@ -4,6 +4,7 @@ const usuario = require('../controllers/usuario')
 const passport=require('passport')
 const { passportAuth } = require('../middleware')
 const comentario = require('../controllers/comentario')
+const comic = require('../controllers/comic')
 
 
 
@@ -32,6 +33,10 @@ router.get('/search-comentario/:id_comentario',comentario.searchid)
 router.get('/search-usernamecomentario/:username', comentario.searchusernamecomentario)
 
 router.delete('/delete-comentario/:id_comentario', comentario.deletecomentario)
+
+//comic
+
+router.post('/create-comic', comic.createc)
 
 
 
