@@ -123,6 +123,13 @@ const searchusernamecomic=async(req,res)=>{
 
 }
 
+const searchidcomic=async(req,res)=>{
+    const id_comic =req.params.id_comic
+    const response=await pool.query('SELECT *FROM comic WHERE id_comic=$1', [id_comic])
+    console.log(response.rows);
+}
+
+
 
 module.exports = {
     createuser,
@@ -138,6 +145,7 @@ module.exports = {
     editcomic,
     deletecomic,
     deletecomicc,
-    searchusernamecomic
+    searchusernamecomic,
+    searchidcomic
 
 }
