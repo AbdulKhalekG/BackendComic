@@ -93,6 +93,13 @@ const createcomic=async (req,res)=> {
     console.log(response);
 }
 
+const editcomic=async(req,res)=>{
+
+    const{id_comic, title, descripcion, capitulos, contenido, categoria, fecha} = req.body
+    const response = await pool.query('UPDATE comic SET title=$1, descripcion=$2, capitulos=$3, contenido=$4, categoria=$5, fecha=$6 WHERE id_comic=$7', [id_comic, title, descripcion, capitulos, contenido, categoria, fecha])
+    console.log(response)
+}
+
 
 
 module.exports = {
@@ -105,7 +112,8 @@ module.exports = {
     searchidcomentario,
     searchusernamecomentario,
     deletecomentario,
-    createcomic
+    createcomic,
+    editcomic
 
 
 }
