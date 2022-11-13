@@ -66,6 +66,12 @@ const editcomentario=async(req,res)=>{
     console.log(response)
 }
 
+const searchidcomentario=async(req,res)=>{
+    const id_comentario =req.params.id_comentario
+    const response=await pool.query('SELECT *FROM comentario WHERE id_comentario=$1', [id_comentario])
+    console.log(response.rows);
+}
+
 
 module.exports = {
     createuser,
@@ -73,7 +79,8 @@ module.exports = {
     searchuserid,
     searchusername,
     createcomentario,
-    editcomentario
+    editcomentario,
+    searchidcomentario
 
 
 }
