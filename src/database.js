@@ -88,15 +88,15 @@ const deletecomentario=async(req,res)=>{
 }
 
 const createcomic=async (req,res)=> {
-    const{title, descripcion, capitulos, contenido, categoria, fecha} = req.body
-    const response = await pool.query('INSERT INTO comic(title, descripcion, capitulos, contenido, categoria, fecha) VALUES($1,$2,$3,$4,$5,$6)',[title, descripcion, capitulos, contenido, categoria, fecha])
+    const{title, descripcion, capitulos, contenido, categoria, fecha, paginas, autor} = req.body
+    const response = await pool.query('INSERT INTO comic(title, descripcion, capitulos, contenido, categoria, fecha, paginas, autor) VALUES($1,$2,$3,$4,$5,$6,$7,$8)',[title, descripcion, capitulos, contenido, categoria, fecha, paginas, autor])
     console.log(response);
 }
 
 const editcomic=async(req,res)=>{
 
-    const{id_comic, title, descripcion, capitulos, contenido, categoria, fecha, id_capitulos} = req.body
-    const response = await pool.query('UPDATE comic SET title=$1, descripcion=$2, capitulos=$3, contenido=$4, categoria=$5, fecha=$6, WHERE id_comic=$7, WHERE id_capitulos=$8', [id_comic, title, descripcion, capitulos, contenido, categoria, fecha, id_capitulos])
+    const{id_comic, title, descripcion, capitulos, contenido, categoria, fecha, id_capitulos, paginas, autor} = req.body
+    const response = await pool.query('UPDATE comic SET title=$1, descripcion=$2, capitulos=$3, contenido=$4, categoria=$5, fecha=$6, WHERE id_comic=$7, WHERE id_capitulos=$8', [id_comic, title, descripcion, capitulos, contenido, categoria, fecha, id_capitulos, paginas, autor])
     console.log(response)
 }
 
