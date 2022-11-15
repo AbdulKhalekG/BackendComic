@@ -129,6 +129,12 @@ const searchidcomic=async(req,res)=>{
     console.log(response.rows);
 }
 
+const showmanga=async(req,res)=>{
+    const response = await pool.query('select distinct comic from imagen')
+    console.log(response);
+    res.json(response.rows)
+}
+
 
 
 module.exports = {
@@ -146,6 +152,7 @@ module.exports = {
     deletecomic,
     deletecomicc,
     searchusernamecomic,
-    searchidcomic
+    searchidcomic,
+    showmanga
 
 }

@@ -42,7 +42,7 @@ router.delete('/delete-comic/:id_comic', comic.deletecomic)
 router.delete('/delete-capitulo/:id_capitulo', comic.deletecomicc)
 router.get('/search-usernamecomic/:username', comic.searchusernamecomicc)
 router.get('/search-comic/:id_comic', comic.searchidc)
-
+router.get('/show-manga', comic.showmanga)
 
 
 
