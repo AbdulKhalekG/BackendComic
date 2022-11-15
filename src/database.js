@@ -89,7 +89,7 @@ const deletecomentario=async(req,res)=>{
 
 const createcomic=async (req,res)=> {
     const{title, descripcion, capitulos, contenido, categoria, fecha, paginas, autor, imagen} = req.body
-    const response = await pool.query('INSERT INTO comic(title, descripcion, capitulos, contenido, categoria, fecha, paginas, autor,imagen) VALUES($1,$2,$3,$4,$5,$6,$7,$8)',[title, descripcion, capitulos, contenido, categoria, fecha, paginas, autor, imagen])
+    const response = await pool.query('INSERT INTO comic(title, descripcion, capitulos, contenido, categoria, fecha, paginas, autor,imagen) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)',[title, descripcion, capitulos, contenido, categoria, fecha, paginas, autor, imagen])
     console.log(response);
 }
 
