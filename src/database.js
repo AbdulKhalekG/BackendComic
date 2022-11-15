@@ -135,6 +135,13 @@ const showmanga=async(req,res)=>{
     res.json(response.rows)
 }
 
+const showmangaautor = async (req, res) => {
+    const autor = req.params.autor
+    const response = await pool.query('select distinct comic from imagen where autor=$1', [autor])
+    console.log(response);
+    res.json(response.rows)
+  }
+
 
 
 module.exports = {
@@ -153,6 +160,7 @@ module.exports = {
     deletecomicc,
     searchusernamecomic,
     searchidcomic,
-    showmanga
+    showmanga,
+    showmangaautor
 
 }

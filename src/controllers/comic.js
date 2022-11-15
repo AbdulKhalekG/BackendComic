@@ -5,6 +5,7 @@ const searchusernamecomic=require('../database')
 const deletecomic=require('../database')
 const deletecapitulo=require('../database')
 const showmanga=require('../database')
+const showmangaautor=require('../database')
 const comic={}
 
 
@@ -83,6 +84,14 @@ comic.createcapitulo=(req,res)=>{
 comic.showmanga=(req,res)=>{
     try{
         showmanga.showmanga(req,res)
+    }catch(e){
+        console.log(e)
+    }
+}
+
+comic.showmangaautor=(req,res)=>{
+    try{
+        showmangaautor.showmangaautor(req,res)
     }catch(e){
         console.log(e)
     }
